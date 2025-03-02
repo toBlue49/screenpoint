@@ -38,16 +38,21 @@ func _on_file_selected(path: String) -> void:
 	#Filter Array
 	FLO_Label.clear()
 	for i in array.size():
-		if i >= array.size() - 1:
+		if i >= array.size():
 			break
-		if array[i] == "" or str(array[i]).contains("###"):
+		if str(array[i]).is_empty() or str(array[i]).contains("###"):
 			array.remove_at(i)
 		else:
+			i -= 1 
 			array[i] = str(array[i]).replace("/n", "\n")
+	if str(array[array.size() - 1]).is_empty() or str(array[array.size() - 1]).contains("###"):
+			array.remove_at(array.size() - 1)
 	
 	#Save Filtered Array
 	global.settings.set_value("text", "array", array)
 	global.settings.save("user://config.cfg")
+	print(array)
+	
 	
 	#Add all lines of Array to TextEdit
 	for i in array.size():
