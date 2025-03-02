@@ -1,0 +1,240 @@
+[gd_scene load_steps=5 format=3 uid="uid://vsfm4rs1gfkr"]
+
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_le0uq"]
+[ext_resource type="FontFile" uid="uid://bgafbg8aawkjh" path="res://Assets/BAHNSCHRIFT.TTF" id="2_xx62r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fknrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl1bh"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_le0uq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GeneralSettings" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.328993
+anchor_top = 0.385802
+anchor_right = 0.671007
+anchor_bottom = 0.614198
+offset_left = 108.0
+offset_right = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="VBoxContainer" parent="CanvasLayer/GeneralSettings"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GeneralSettings/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 43
+text = "Textfarbe"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorPicker" type="ColorPickerButton" parent="CanvasLayer/GeneralSettings/Text"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+metadata/_edit_use_anchors_ = true
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/GeneralSettings"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="BG" type="VBoxContainer" parent="CanvasLayer/GeneralSettings"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GeneralSettings/BG"]
+layout_mode = 2
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 43
+text = "BG Farbe"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorPicker" type="ColorPickerButton" parent="CanvasLayer/GeneralSettings/BG"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+metadata/_edit_use_anchors_ = true
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/GeneralSettings"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Text Lines" type="VBoxContainer" parent="CanvasLayer/GeneralSettings"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GeneralSettings/Text Lines"]
+layout_mode = 2
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 43
+text = "Text Lines"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FileButton" type="Button" parent="CanvasLayer/GeneralSettings/Text Lines"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 30
+text = "Lade Datei"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 64
+text = "ScreenPoint Settings"
+horizontal_alignment = 1
+
+[node name="LabelBack2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.932099
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 43
+text = "Drücke \"J\" um zurück zu gehen"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelVer" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.932099
+anchor_right = 0.210938
+anchor_bottom = 1.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 34
+text = "Version 0.5.0"
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="file_loaded" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Ok" type="Button" parent="CanvasLayer/file_loaded"]
+layout_mode = 2
+offset_left = 856.0
+offset_top = 128.0
+offset_right = 968.0
+offset_bottom = 208.0
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 30
+text = "OK!"
+
+[node name="Label" type="Label" parent="CanvasLayer/file_loaded"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.0740741
+anchor_right = 0.624132
+anchor_bottom = 0.145062
+offset_left = 16.0
+offset_right = -16.0
+offset_bottom = -5.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 45
+text = "Datei geladen!"
+horizontal_alignment = 1
+vertical_alignment = 2
+text_direction = 3
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/file_loaded"]
+custom_minimum_size = Vector2(513, 500)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277778
+anchor_top = 0.197531
+anchor_right = 0.736111
+anchor_bottom = 0.969136
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fknrj")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_wl1bh")
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_smooth = true
+draw_control_chars = true
+metadata/_edit_use_anchors_ = true
+
+[node name="FileDialog_Open" type="FileDialog" parent="."]
+transparent_bg = true
+title = "Öffne eine Text Datei"
+initial_position = 2
+size = Vector2i(324, 180)
+transparent = true
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.txt;Text Dateien", "*;Alle Dateien")
+show_hidden_files = true
+use_native_dialog = true
+
+[connection signal="color_changed" from="CanvasLayer/GeneralSettings/Text/ColorPicker" to="." method="on_text_color_changed"]
+[connection signal="color_changed" from="CanvasLayer/GeneralSettings/BG/ColorPicker" to="." method="on_bg_color_changed"]
+[connection signal="pressed" from="CanvasLayer/GeneralSettings/Text Lines/FileButton" to="." method="_on_file_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/file_loaded/Ok" to="." method="_on_ok_pressed"]
+[connection signal="file_selected" from="FileDialog_Open" to="." method="_on_file_selected"]
