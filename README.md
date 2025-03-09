@@ -3,13 +3,13 @@ ScreenPoint ist ein *Bildschirmschoner*, welcher dein *Bildschirm schont*. (also
 
 **Hauptbildschirm:**  
 
-![readme_img1](https://raw.githubusercontent.com/toBlue49/screenpoint/refs/heads/main/Assets/readme_img/main.png?token=GHSAT0AAAAAAC72R3MH3BHW5KW3OKEBP5VWZ6FTTGA "Readme Main Screen")  
+![readme_img1](https://github.com/toBlue49/screenpoint/blob/main/Assets/readme_img/main.png "Readme Main Screen")  
 
 **Einstellungen:**  
-![readme_img2](https://raw.githubusercontent.com/toBlue49/screenpoint/refs/heads/main/Assets/readme_img/settings.png?token=GHSAT0AAAAAAC72R3MGUFNNWBWGIKZSF5F2Z6FTVXQ "Readme Settings Screen")  
+![readme_img2](https://github.com/toBlue49/screenpoint/blob/main/Assets/readme_img/settings.png "Readme Settings Screen")  
 
 **Datei geladen:**  
-![readme_img3](https://raw.githubusercontent.com/toBlue49/screenpoint/refs/heads/main/Assets/readme_img/fild_loaded.png?token=GHSAT0AAAAAAC72R3MGASP4RGHCKXYJMJBOZ6FTVYQ "Readme File Loaded Screen")  
+![readme_img3](https://github.com/toBlue49/screenpoint/blob/main/Assets/readme_img/fild_loaded.png "Readme File Loaded Screen")  
 
 # **ScreenPoint Lines Tutorial**
 Version: **0.5.0**  
