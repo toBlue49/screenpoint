@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Assets/VersionSplash.png"
-config/icon="res://icon.svg"
+config/icon="res://Assets/scr.png"
 
 [autoload]
 

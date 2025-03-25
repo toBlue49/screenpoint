@@ -40,6 +40,7 @@ func _on_file_selected(path: String) -> void:
 	for i in array.size():
 		if i >= array.size():
 			break
+		FLO_Label.insert_line_at((i), array[i - 1])
 		if str(array[i]).is_empty() or str(array[i]).contains("###"):
 			array.remove_at(i)
 		else:
@@ -53,14 +54,7 @@ func _on_file_selected(path: String) -> void:
 	global.settings.save("user://config.cfg")
 	print(array)
 	
-	
-	#Add all lines of Array to TextEdit
-	for i in array.size():
-		FLO_Label.insert_line_at((i + linebreak_count), array[i])
-		if str(array[i]).contains("\n"):
-			linebreak_count += 1
-		if str(array[i]).contains("\n") and str(array[i]).contains("###"):
-			linebreak_count -= 1
+		
 		
 	#Remove empty lines
 	for i in FLO_Label.get_line_count():

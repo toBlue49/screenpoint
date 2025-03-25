@@ -152,7 +152,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(100, 100, 100, 1)
 theme_override_fonts/font = ExtResource("2_xx62r")
 theme_override_font_sizes/font_size = 34
-text = "Version 0.5.0"
+text = "Version 0.5.1"
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
