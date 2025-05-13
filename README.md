@@ -45,6 +45,6 @@ Um einen *Zeilenumbruch* in einer Line zu erstellen *ohne die Entertaste* zu ver
 **Viel Spaß mit ScreenPoint!**
 
 # Build
-**Godot Version:** 4.3
+**Godot Version:** 4.4
 
 Das Projekt in der Godot Engine importieren und dannach bearbeiten oder kompelieren.
