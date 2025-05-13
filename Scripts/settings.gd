@@ -9,6 +9,8 @@ func _ready():
 	global.settings.load("user://config.cfg")
 	$CanvasLayer/GeneralSettings/Text/ColorPicker.color = global.Get_Color_from_Config(global.text_color_rgb, "text", "color", Color.WHITE)
 	$CanvasLayer/GeneralSettings/BG/ColorPicker.color = global.Get_Color_from_Config(global.bg_color_rgb, "bg", "color", Color.BLACK)
+	update_clockbutton_text()
+
 func _process(delta):
 	
 	if Input.is_action_just_pressed("J"): 
@@ -68,4 +70,17 @@ func _on_file_selected(path: String) -> void:
 
 func _on_ok_pressed() -> void:
 	FL_overlay.visible = false
-	
+
+func update_clockbutton_text():
+	if global.do_clock:
+		$CanvasLayer/GeneralSettings/Clock/Button.text = "An"
+	else:
+		$CanvasLayer/GeneralSettings/Clock/Button.text = "Aus"
+
+func _on_clockbutton_pressed() -> void:
+	if global.do_clock:
+		global.do_clock = false
+	else:
+		global.do_clock = true
+	update_clockbutton_text()
+	global.settings.set_value("text", "clock", global.do_clock)

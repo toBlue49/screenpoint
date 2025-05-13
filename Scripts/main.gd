@@ -69,9 +69,18 @@ func _ready():
 	global.settings.load("user://settings.cfg")
 	$CanvasLayer/Label.set_modulate(global.Get_Color_from_Config(global.text_color_rgb, "text", "color", Color.WHITE))
 	$CanvasLayer/ColorRect.color = global.Get_Color_from_Config(global.bg_color_rgb, "bg", "color", Color.BLACK)
+	
+	await get_tree().process_frame
+	if global.do_clock:
+		$CanvasLayer/LabelC.visible = true
+		$CanvasLayer/LabelC.set("theme_override_colors/font_color", global.Get_Color_from_Config(global.text_color_rgb, "text", "color", Color.WHITE))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
+	#Update Clock
+	if global.do_clock:
+		$CanvasLayer/LabelC.text = Time.get_time_string_from_system(false)
+	
 	#Inc Timer
 	timer = timer + delta
 	
@@ -91,9 +100,7 @@ func _process(delta) -> void:
 			
 	#Pressing Key Stuff
 	if Input.is_anything_pressed():
-		if Input.is_key_pressed(KEY_S): #Schoolmode
-			$CanvasLayer/Schoolmode_Label.visible = true
-		elif Input.is_action_just_pressed("J"):
+		if Input.is_action_just_pressed("J"):
 			if global.do_fullscreen:
 				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
@@ -101,4 +108,4 @@ func _process(delta) -> void:
 		elif Input.is_action_pressed("J"): # if hold from transition. don't delete it.
 			pass
 		else:
-			get_tree().quit()
+			get_tree().quit(1)

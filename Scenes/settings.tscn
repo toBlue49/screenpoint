@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://vsfm4rs1gfkr"]
 
-[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_le0uq"]
+[ext_resource type="Script" uid="uid://bqd74kt76ok7" path="res://Scripts/settings.gd" id="1_le0uq"]
 [ext_resource type="FontFile" uid="uid://bgafbg8aawkjh" path="res://Assets/BAHNSCHRIFT.TTF" id="2_xx62r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fknrj"]
@@ -118,6 +118,35 @@ theme_override_fonts/font = ExtResource("2_xx62r")
 theme_override_font_sizes/font_size = 30
 text = "Lade Datei"
 
+[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/GeneralSettings"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Clock" type="VBoxContainer" parent="CanvasLayer/GeneralSettings"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GeneralSettings/Clock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(100, 100, 100, 1)
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 43
+text = "Uhrzeit"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer/GeneralSettings/Clock"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xx62r")
+theme_override_font_sizes/font_size = 30
+text = "Aus"
+
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
@@ -152,7 +181,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(100, 100, 100, 1)
 theme_override_fonts/font = ExtResource("2_xx62r")
 theme_override_font_sizes/font_size = 34
-text = "Version 0.5.1"
+text = "Version 0.5.2"
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
@@ -236,5 +265,6 @@ use_native_dialog = true
 [connection signal="color_changed" from="CanvasLayer/GeneralSettings/Text/ColorPicker" to="." method="on_text_color_changed"]
 [connection signal="color_changed" from="CanvasLayer/GeneralSettings/BG/ColorPicker" to="." method="on_bg_color_changed"]
 [connection signal="pressed" from="CanvasLayer/GeneralSettings/Text Lines/FileButton" to="." method="_on_file_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GeneralSettings/Clock/Button" to="." method="_on_clockbutton_pressed"]
 [connection signal="pressed" from="CanvasLayer/file_loaded/Ok" to="." method="_on_ok_pressed"]
 [connection signal="file_selected" from="FileDialog_Open" to="." method="_on_file_selected"]

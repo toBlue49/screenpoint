@@ -3,19 +3,20 @@ var settings = ConfigFile.new()
 var text_color_rgb = Color(1.0, 1.0, 1.0, 1.0)
 var bg_color_rgb = Color(0.0, 0.0, 0.0, 1.0)
 var lines_array = [ #Array of all possible Lines
-	"something went wrong. please contant @marlon49"
+	"something went wrong. lines_array not loaded from config."
 ]
 var color_temp = [
 	0.0, 0.0, 0.0, 1.0
 ]
 var do_fullscreen = true
+var do_clock = false
 
 func _ready() -> void:
-	print_rich("Credits: [b]Bahnschrift[/b] from Microsoft. [i]good font, just saying[/i]")
+	print_rich("Credits: [b]Bahnschrift[/b] from Microsoft.")
 	
 	settings.load("user://config.cfg")
 	lines_array = global.settings.get_value("text", "array", ["Drücke J für Einstellungen"])
-	
+	do_clock = global.settings.get_value("text", "clock", false)
 
 func Save_Color_as_Array(color, section, key):
 	color_temp[0] = color.r
