@@ -34,35 +34,16 @@ func _on_file_button_pressed() -> void:
 
 func _on_file_selected(path: String) -> void:
 	var open_file = FileAccess.open(path, FileAccess.READ)
-	var array = Array((open_file.get_file_as_string(path)).split("\n"))
-	var linebreak_count = 0
+	var array = open_file.get_file_as_string(path)
+	array = str_to_var(str(array))
 	
-	#Filter Array
-	FLO_Label.clear()
-	for i in array.size():
-		if i >= array.size():
-			break
-		FLO_Label.insert_line_at((i), array[i - 1])
-		if str(array[i]).is_empty() or str(array[i]).contains("###"):
-			array.remove_at(i)
-		else:
-			i -= 1 
-			array[i] = str(array[i]).replace("/n", "\n")
-	if str(array[array.size() - 1]).is_empty() or str(array[array.size() - 1]).contains("###"):
-			array.remove_at(array.size() - 1)
-	
-	#Save Filtered Array
+	#Save Array
 	global.settings.set_value("text", "array", array)
 	global.settings.save("user://config.cfg")
 	print(array)
 	
-		
-		
-	#Remove empty lines
-	for i in FLO_Label.get_line_count():
-		if FLO_Label.get_line(i) == "":
-			FLO_Label.remove_line_at(i)
-	
+	#Print Array to FLO_label
+	FLO_Label.text = str(array)
 	
 	#open file_loaded overlay
 	FL_overlay.visible = true

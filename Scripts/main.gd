@@ -84,13 +84,13 @@ func _process(delta) -> void:
 	#Inc Timer
 	timer = timer + delta
 	
-	#Label and Timer Logic
+	#Custom Animation and Label Logic
 	if timer >= 6 && timer <= 7: #Tween alpha to 0
 		custom_tween_alpha = custom_tween_alpha - delta
 		text.set("theme_override_colors/font_color", Color(1, 1, 1, custom_tween_alpha))
 	if timer >= 7 && timer <= 8: #Generate new line and tween alpha to 1
 		if new_line_generated == false:
-			text.text = global.lines_array[rand.randi_range(0, global.lines_array.size() - 1)]
+			text.text = get_new_string()
 		new_line_generated = true
 		custom_tween_alpha = custom_tween_alpha + delta
 		text.set("theme_override_colors/font_color", Color(1, 1, 1, custom_tween_alpha))
@@ -109,3 +109,11 @@ func _process(delta) -> void:
 			pass
 		else:
 			get_tree().quit(1)
+
+func get_new_string():
+	var new_text = str(global.lines_array[rand.randi_range(0, global.lines_array.size() - 1)])
+	if new_text.contains("###"):
+		print("comment: skip")
+		return get_new_string()
+	else:
+		return new_text
