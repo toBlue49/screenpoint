@@ -17,7 +17,7 @@ Date: **29.07.2025**; Time: **13:09**
 
 ## Basisinformationen
 Um die Datei zu laden muss "J" drückt werden und dannach eine Datei geladen werden. ScreenPoint zeigt dann alle Strings (Text) von der Text Datei.
-Die Strings werden in einem *Array angegeben*. Diese gibts du so an: `["HIER DEIN TEXT", "HIER DEIN 2. TEXT"]
+Die Strings werden in einem *Array angegeben*. Diese gibts du so an: `["HIER DEIN TEXT", "HIER DEIN 2. TEXT"]`
 
 **WARNUNG:** Vergesse nicht das *Komma nach den Strings* (Text), welche du in *Anführungsstichen* umrandest. Gebe *kein Komma* nach dem *letztem String*, wie bei einer Aufzählung.
 
